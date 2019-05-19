@@ -1,7 +1,19 @@
 <div class="container container-novo-usuario"> 
 
-    <div class="imagem">
-        <img src="https://fiduc.com.br/wp-content/uploads/2017/11/Perfil.png" alt="">
+    <div id="foto-perfil">
+        <div class="imagem">
+            <img src="https://fiduc.com.br/wp-content/uploads/2017/11/Perfil.png" alt="">
+        </div>
+
+        <div>
+            <input 
+                style="display:none" 
+                type="file" 
+                (change)="onFileSelected($event)"
+                #fileInput>
+            <button type="button" class="btn btn-secondary botao-upload" (click)="fileInput.click()">Selecionar arquivo</button>
+            <button type="button" class="btn btn-primary botao-upload" (click)="onUpload()">Upload</button>
+        </div>
     </div>
 
     <div class="formulario">

@@ -23,3 +23,14 @@
     margin-top:10px;
     float: right;
 }
+
+.botao-upload{
+    float:left;
+    display: inline-flex;
+    margin: 10px 10px 10px 0;
+}
+
+#foto-perfil{
+    width: 300px !important;
+    display: inline-block;
+}

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { UsuariosService } from '../usuarios/usuarios.service';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-formulario',
@@ -9,10 +10,25 @@ import { UsuariosService } from '../usuarios/usuarios.service';
 })
 export class FormularioComponent implements OnInit {
 
+  selectedFile: File = null;
+
+  onFileSelected(event){
+   this.selectedFile = <File>event.target.files[0];
+  }
+
+  onUpload(){
+    const formularioFoto = new FormData();
+    formularioFoto.append('image', this.selectedFile.name)
+    this.http.post('http://localhost:3000', formularioFoto)
+    .subscribe (res => {
+      console.log(res);
+    })
+  }
+
   form: FormGroup;
   Submitted = false;
 
-  constructor(private fb: FormBuilder, private service: UsuariosService) { }
+  constructor(private fb: FormBuilder, private service: UsuariosService, private http: HttpClient) { }
 
   ngOnInit() {
 
