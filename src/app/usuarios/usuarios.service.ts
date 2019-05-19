@@ -1,14 +1,15 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Usuario } from './usuario';
-import { tap } from 'rxjs/operators';
+import { tap, take } from 'rxjs/operators';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class UsuariosService {
 
-  private readonly API = 'http://localhost:3000/usuarios';
+  private readonly API = `${environment.API}usuarios`;
 
   constructor(private http: HttpClient) { }
 
@@ -17,7 +18,9 @@ export class UsuariosService {
     .pipe(
       tap(console.log)
     );
-
   }
 
+  create(usuario){
+    return this.http.post(this.API, usuario).pipe(take(1));
+  }
 }
