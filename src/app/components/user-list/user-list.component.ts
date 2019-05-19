@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { ApiService } from '../../services/api.service';
 import { User } from '../../model/user';
 import { Router, ActivatedRoute } from '@angular/router';
@@ -10,12 +10,16 @@ import { Router, ActivatedRoute } from '@angular/router';
   styleUrls: ['./user-list.component.css']
 })
 export class UsuariosComponent implements OnInit {
+  
+@Input() receberFamilia;
 
   usuarios: User[];
 
   constructor(private service: ApiService, private router: Router, private route: ActivatedRoute) { }
 
   ngOnInit() {
+    console.log('Recebendo =>  ',  this.receberFamilia);
+
    this.service.getUser()
       .subscribe(dados => this.usuarios = dados);
   }
