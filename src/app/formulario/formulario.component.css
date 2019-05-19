@@ -1,0 +1,25 @@
+.imagem{
+    display: inline-flex;
+    margin: 4%;
+    border-radius: 100px;
+}
+
+.formulario{
+    width: 50%;
+    float: right;
+    display: inline-flex;
+    margin-top: 2%;
+}
+
+.form-horizontal{
+    width:90%;
+}
+
+.form-group{
+    margin-bottom:0px !important;
+}
+
+.btn{
+    margin-top:10px;
+    float: right;
+}

@@ -1,0 +1,27 @@
+
+.usuario{
+    background-color: white;
+    width: 47%;
+    display: inline-flex;
+    margin: 10px 10px 10px 10px;
+
+}
+
+.usuario-table{
+    margin: 30px 20px 0px 0px;
+}
+
+.container-usuarios{
+    margin-top: 150px;
+}
+
+#btn-editar{
+    margin: 10px 0 20px 0px;
+}
+
+.foto-usuario{
+background-color: lightblue;
+border-radius: 100px;
+margin: 24px 5px 0 20px;
+width: 70%;
+}

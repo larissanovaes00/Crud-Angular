@@ -1,0 +1,33 @@
+http://localhost:3000/usuarios
+
+###
+GET http://localhost:3000/usuarios/1
+
+###
+
+POST http://localhost:3000/usuarios HTTP/1.1
+content-type: application/json
+
+{
+    "id": 9,
+    "nome": "Wilson Novaes",
+    "email": "wilsonnovaes00@hotmail.com",
+    "createDate": "01/01/2019"
+}
+
+###
+
+PUT http://localhost:3000/usuarios/1 HTTP/1.1
+content-type: application/json
+
+{
+    "id": 1,
+    "nome": "Wilson",
+    "email": "wilsonnovaes00@hotmail.com",
+    "createDate": "01/01/2019"
+}
+
+###
+
+DELETE http://localhost:3000/usuarios/3 HTTP/1.1
+content-type: application/json
