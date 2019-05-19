@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-
+import { FormBuilder, FormGroup, NgForm, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
+import { ApiService } from '../../services/api.service';
+import { tap, catchError } from 'rxjs/operators';
 @Component({
   selector: 'app-formulario',
   templateUrl: './formulario.component.html',
@@ -7,9 +10,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FormularioComponent implements OnInit {
 
-  constructor() { }
+  UserForm: FormGroup;
+  isLoadingResults = false;
+  constructor(private router: Router, private formBuilder: FormBuilder, private api: ApiService) { }
 
   ngOnInit() {
+    this.UserForm = this.formBuilder.group({
+      'id' : [null, Validators.required],
+      'name' : [null, [Validators.required, Validators.minLength(4)]],
+      'email' : [null, Validators.required],
+      'image': 'https://media.licdn.com/dms/image/C5103AQFVQKN8XjeV6g/profile-displayphoto-shrink_200_200/0?e=1559174400&v=beta&t=4D1xJnMOtjnxoSxVFFXcCgnEhNGafMG4sdRGbggINj0',
+      'dateCreate': [null, Validators.required]
+    });
+  }
+
+  addUser(form: NgForm){
+    this.api.addUser(form) 
+      .subscribe(res => this.ngOnInit());
   }
 
 }

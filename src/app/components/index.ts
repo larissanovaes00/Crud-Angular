@@ -1,3 +1,3 @@
 export * from './formulario/formulario.component';
-export * from './usuarios/usuarios.component';
+export * from './user-list/user-list.component';
 
