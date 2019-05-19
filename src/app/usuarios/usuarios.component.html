@@ -3,7 +3,7 @@
   <div class="jumbotron">
       
     <div class="usuario" *ngFor="let user of usuarios">
-        <div><img class="foto-usuario" src="https://fiduc.com.br/wp-content/uploads/2017/11/Perfil.png" alt=""></div>
+        <div><img class="foto-usuario" src="{{user.image}}" alt=""></div>
         <div class="usuario-table" >
             <input class="form-control" id="disabledInput" type="text" placeholder="{{user.id}}" disabled><br>
             <input class="form-control" id="disabledInput" type="text" placeholder="{{user.nome}}" disabled><br>
