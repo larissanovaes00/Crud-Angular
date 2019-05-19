@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Usuario } from './usuario';
+import { tap } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
@@ -12,7 +13,11 @@ export class UsuariosService {
   constructor(private http: HttpClient) { }
 
   listar() {
-    return this.http.get<Usuario[]>(this.API);
+    return this.http.get<Usuario[]>(this.API)
+    .pipe(
+      tap(console.log)
+    );
+
   }
 
 }
