@@ -1,47 +1,17 @@
 <div class="container container-usuarios">
 
-  <div class=" jumbotron usuarios">
+  <div class="jumbotron">
       
-    <div class="usuario" **ngfor="let usuario of usuarios">
+    <div class="usuario" *ngFor="let user of usuarios">
         <div><img class="foto-usuario" src="https://fiduc.com.br/wp-content/uploads/2017/11/Perfil.png" alt=""></div>
         <div class="usuario-table" >
-            <input class="form-control" id="disabledInput" type="text" placeholder="ID" disabled><br>
-            <input class="form-control" id="disabledInput" type="text" placeholder="Name" disabled><br>
-            <input class="form-control" id="disabledInput" type="text" placeholder="E-mail" disabled><br>
+            <input class="form-control" id="disabledInput" type="text" placeholder="{{user.id}}" disabled><br>
+            <input class="form-control" id="disabledInput" type="text" placeholder="{{user.nome}}" disabled><br>
+            <input class="form-control" id="disabledInput" type="text" placeholder="{{user.email}}" disabled><br>
             <div><button type="edit" class="btn btn-primary" id="btn-editar">Editar</button></div>
         </div>
     </div>            
 
-
-      <div class="usuario">
-          <div><img class="foto-usuario" src="https://fiduc.com.br/wp-content/uploads/2017/11/Perfil.png" alt=""></div>
-          <div class="usuario-table">
-              <input class="form-control" id="disabledInput" type="text" placeholder="ID" disabled><br>
-              <input class="form-control" id="disabledInput" type="text" placeholder="Name" disabled><br>
-              <input class="form-control" id="disabledInput" type="text" placeholder="E-mail" disabled><br>
-              <div><button type="edit" class="btn btn-primary" id="btn-editar">Editar</button></div>
-          </div>
-      </div>
-
-      <div class="usuario">
-          <div><img class="foto-usuario" src="https://fiduc.com.br/wp-content/uploads/2017/11/Perfil.png" alt=""></div>
-          <div class="usuario-table">
-              <input class="form-control" id="disabledInput" type="text" placeholder="ID" disabled><br>
-              <input class="form-control" id="disabledInput" type="text" placeholder="Name" disabled><br>
-              <input class="form-control" id="disabledInput" type="text" placeholder="E-mail" disabled><br>
-              <div><button type="edit" class="btn btn-primary" id="btn-editar">Editar</button></div>
-          </div>
-      </div>
-
-      <div class="usuario">
-          <div><img class="foto-usuario" src="https://fiduc.com.br/wp-content/uploads/2017/11/Perfil.png" alt=""></div>
-          <div class="usuario-table">
-              <input class="form-control" id="disabledInput" type="text" placeholder="ID" disabled><br>
-              <input class="form-control" id="disabledInput" type="text" placeholder="Name" disabled><br>
-              <input class="form-control" id="disabledInput" type="text" placeholder="E-mail" disabled><br>
-              <div><button type="edit" class="btn btn-primary" id="btn-editar">Editar</button></div>
-          </div>
-      </div>
 
   </div>
 
