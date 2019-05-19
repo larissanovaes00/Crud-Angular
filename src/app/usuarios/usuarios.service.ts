@@ -1,23 +1,18 @@
-import { Injectable, OnInit } from '@angular/core'
-import { HttpClient } from '@angular/common/http'
-import {FormularioAPI} from '../app.api'
+import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { Usuario } from './usuario';
 
-Injectable({
+@Injectable({
   providedIn: 'root'
 })
+export class UsuariosService {
 
-export class UsuariosService implements OnInit {
+  private readonly API = 'http://localhost:3000/usuarios';
 
-  constructor(private http: HttpClient) { console.log('oi')}
+  constructor(private http: HttpClient) { }
 
-  ngOnInit(){
-    console.log("oi");
+  listar() {
+    return this.http.get<Usuario[]>(this.API);
   }
-      
-  list(){
-    return this.http.get(FormularioAPI);
-  }
-  
+
 }
-
-console.log(FormularioAPI);
