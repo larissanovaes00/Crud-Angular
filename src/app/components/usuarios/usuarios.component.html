@@ -9,7 +9,7 @@
             <input class="form-control" id="disabledInput" type="text" placeholder="{{user.nome}}" disabled><br>
             <input class="form-control" id="disabledInput" type="text" placeholder="{{user.email}}" disabled><br>
             <div>
-              <button type="edit" class="btn btn-primary" id="btn-editar">Editar</button>
+              <button type="edit" class="btn btn-secondary" (click)="onRefresh()" id="btn-editar">Editar</button>
               <button type="edit" class="btn btn-danger" id="btn-excluir">Excluir</button>
             </div>
       </div>
