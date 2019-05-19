@@ -17,7 +17,5 @@ export class UsuariosService {
     .pipe(
       tap(console.log)
     );
-
   }
-
 }
