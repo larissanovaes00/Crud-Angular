@@ -18,6 +18,13 @@
 .form-group{
   margin-bottom:0px !important;
 }
+.foto-usuario{
+  background-color: lightblue;
+  border-radius: 100px;
+  margin: 24px 5px 0 20px;
+  width: 90%;
+  }
+
 
 .btn{
   margin-top:10px;

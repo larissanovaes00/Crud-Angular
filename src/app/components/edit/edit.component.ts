@@ -28,7 +28,7 @@ export class EditComponent implements OnInit {
         'id' : [null, Validators.required],
         'nome' : [null, [Validators.required, Validators.minLength(4)]],
         'email' : [null, Validators.required],
-        'image': 'https://media.licdn.com/dms/image/C5103AQFVQKN8XjeV6g/profile-displayphoto-shrink_200_200/0?e=1559174400&v=beta&t=4D1xJnMOtjnxoSxVFFXcCgnEhNGafMG4sdRGbggINj0',
+        'image': [null, Validators.required],
         'dateCreate': [null, Validators.required]
       });
 
@@ -45,6 +45,7 @@ export class EditComponent implements OnInit {
         id: data.id,
         nome: data.nome,
         email: data.email,
+        image: data.image,
         dateCreate: data.createDate
       });
     });

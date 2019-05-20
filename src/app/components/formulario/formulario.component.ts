@@ -25,7 +25,9 @@ export class FormularioComponent implements OnInit {
 
   addUser(form: NgForm){
     this.api.addUser(form) 
-      .subscribe(res => this.ngOnInit());
+      .subscribe(res => {
+        this.router.navigateByUrl(' ')
+      })
   }
 
 }
