@@ -11,7 +11,6 @@ import { ApiService } from '../../services/api.service';
 export class FormularioComponent implements OnInit {
 
   UserForm: FormGroup;
-  isLoadingResults = false;
   constructor(private router: Router, private formBuilder: FormBuilder, private api: ApiService) {}
 
   ngOnInit() {

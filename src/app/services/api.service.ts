@@ -25,11 +25,26 @@ export class ApiService {
 
     );
   }
+  getUserOne(id: number): Observable<User> {
+    const url = `${apiUrl}/${id}`;
+    return this.http.get<User>(url).pipe(
+      tap(_ => console.log(`leu usuario com o  id=${id}`)),
+      catchError(this.handleError<User>(`getuser id=${id}`))
+    );
+  }
   addUser (user): Observable<User> {
 
     return this.http.post<User>(apiUrl, user, httpOptions).pipe(
-      tap((user: User) => console.log(`adicionou o user com w/ id=${user._id}`)),
+      tap((user: User) => console.log(`adicionou o user com w/ id=${user.id}`)),
       catchError(this.handleError<User>('addProduto'))
+    );
+  }
+
+  updateUser(id, produto): Observable<any> {
+    const url = `${apiUrl}/${id}`;
+    return this.http.put(url, produto, httpOptions).pipe(
+      tap(_ => console.log(`atualiza o usuario com id=${id}`)),
+      catchError(this.handleError<any>('updateProduto'))
     );
   }
 

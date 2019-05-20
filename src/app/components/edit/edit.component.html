@@ -1,0 +1,37 @@
+<div class="container container-novo-usuario"> 
+
+  <div class="imagem">
+      <img src="{{ image }}" alt="">
+  </div>
+
+  <div class="formulario">
+      <form class="form-horizontal" [formGroup]="UserForm" (ngSubmit)="updateUser(UserForm.value)">
+
+          <div class="form-group">
+              <label for="InputID"></label>
+              <input type="number" class="form-control" id="exampleInputName2" placeholder="ID" formControlName="id">
+          </div>
+          
+          <div class="form-group">
+              <label for="InputName"></label>
+              <input type="text" class="form-control" id="exampleInputName2" placeholder="Name" formControlName="nome">
+          </div> 
+
+          <div class="form-group">
+              <label for="InputEmail"></label>
+              <input type="email" class="form-control" id="exampleInputEmail2" placeholder="Email" formControlName="email">
+          </div>
+
+          <div class="form-group">
+              <label for="InputDate"></label>
+              <input type="text" class="form-control" id="exampleInputEmail2" placeholder="Data" formControlName="dateCreate"><p>*Create Date</p>
+          </div>
+
+          <button class="btn btn-primary">Identify Account</button>
+      
+      </form>
+  </div>
+
+</div>
+
+<user-list></user-list>

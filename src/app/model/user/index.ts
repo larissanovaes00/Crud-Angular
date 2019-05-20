@@ -1,7 +1,7 @@
 export class User {
-  _id: string;
+  id: string;
   nome: string;
   email: string;
   image: string;
-  createDate: Date;
+  createDate: string;
 }

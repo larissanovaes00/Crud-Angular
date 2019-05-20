@@ -1,12 +1,17 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { UsuariosComponent, FormularioComponent, HomeComponent } from './components';
+import { HomeComponent, EditComponent, FormularioComponent, PrincipalComponent} from './components';
 
 const routes: Routes = [
   {
     path: '',
-    component: HomeComponent,
+    component: PrincipalComponent,
     data: { title: 'Home'}
+
+  },
+  {
+    path: 'edit/user/:id',
+    component: EditComponent
 
   },
   { 
@@ -19,7 +24,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes, {onSameUrlNavigation: 'reload'})],
+  imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
